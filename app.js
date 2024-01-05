@@ -10,3 +10,12 @@ $("#addTodo").click(function () {
   //挿入後は入力フォームを空にする
   $("input").val("");
 });
+
+//チェックを入れた時に斜線を引く
+$(document).on("change", "input[type=checkbox]", function(){
+  if($(this).is(":checked")){
+    $(this).parent().css("text-decoration", "line-through");
+  } else {
+    $(this).parent().css("text-decoration", "none");    
+  }
+});
